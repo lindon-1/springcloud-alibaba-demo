@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: nacos-server1  #不能写在Application.yml里面
+  cloud:
+    nacos:
+      password: nacos
+      username: nacos
+      server-addr: 192.168.37.128:8848
+      config:
+        name: ${spring.application.name}
+        namespace: 4cea2322-85c8-4182-a732-0bbd13ad12c4  #空间命名
+        file-extension: yaml  #nacos配置的文件后缀名一定得是yaml，yml不生效
+        extension-configs:
+          - data-id: demo-1-ext.yaml
+            refresh: true
+        shared-configs:
+          - data-id: demo-shar.yaml
+            refresh: true
+
+
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
