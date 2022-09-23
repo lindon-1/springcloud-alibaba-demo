@@ -20,10 +20,13 @@ public class TestController {
     @Value("${age}")
     Integer age;
 
+    @Value("${server.port:80}")
+    Integer port;
+
     @GetMapping(value ="/test")
     public String test() {
         System.out.println(name);
-        return "name:" + name + ", age: " + age + ", address:" +address ;
+        return "端口号：" + + port + " name:" + name + ", age: " + age + ", address:" +address ;
     }
 
 
