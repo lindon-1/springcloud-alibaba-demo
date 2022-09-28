@@ -6,6 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @FeignClient("nacos-server1")
 public interface DemoFeign {
 
-    @GetMapping(value = "/demo/test")
+    @GetMapping(value = "/nacos/demo/test")
     public String test();
 }
