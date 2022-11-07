@@ -20,7 +20,7 @@ import java.net.UnknownHostException;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
-@Component
+//@Component
 public class AccessLimitGlobalFilter implements GlobalFilter, Ordered {
 
     @Resource

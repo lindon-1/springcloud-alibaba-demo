@@ -19,3 +19,5 @@ spring:
     address: redis://192.168.37.128:6379
     database: 7
     password: 123456
+  main:
+    allow-bean-definition-overriding: true

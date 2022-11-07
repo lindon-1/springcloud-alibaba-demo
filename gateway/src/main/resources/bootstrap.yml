@@ -26,3 +26,17 @@ spring:
       discovery:
         locator:
           enabled: true
+    sentinel:
+      transport:
+        port: 8090
+        dashboard: 192.168.37.128:8090
+      eager: true
+        #配置限流之后的响应内容
+      scg:
+        fallback:
+          # 两种模式：一种是response返回文字提示信息，一种是redirect，重定向跳转，需要同时配置redirect(跳转的uri)
+          mode: response
+          # 响应的状态
+          response-status: 426
+          # 响应体
+          response-body: '{"code": 426,"message": "限流了，稍后重试！"}'
